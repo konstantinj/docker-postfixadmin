@@ -23,8 +23,8 @@ sudo docker run \
   -e MYSQL_USER=postfix \
   -e MYSQL_PASSWORD=password \
   -e MYSQL_DATABASE=postfix \
-  -e ADMIN_USERNAME=user@mail.tld - username is actually an email address to login to postfixadmin - THE admin account \
-  -e ADMIN_PASSWORD=password - password for the admin account - must contain AT LEAST two digits \
+  -e USERNAME=user@mail.tld - username is actually an email address to login to postfixadmin - THE admin account \
+  -e PASSWORD=password - password for the admin account - must contain AT LEAST two digits \
   -e PA_DOMAIN_PATH=YES \ 
   konjak/postfixadmin
 ```
