@@ -1,7 +1,7 @@
 FROM alpine
 MAINTAINER Konstantin Jakobi <konstantin.jakobi@gmail.com>
 
-ENV VERSION=2.93
+ENV VERSION=3.0
 
 EXPOSE 80
 
