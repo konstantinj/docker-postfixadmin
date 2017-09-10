@@ -7,9 +7,12 @@ $CONF['database_password'] = getenv('MYSQL_PASSWORD');
 $CONF['database_name'] = getenv('MYSQL_DATABASE');
 $CONF['encrypt'] = 'dovecot:SHA512-CRYPT';
 $CONF['dovecotpw'] = "/usr/bin/doveadm pw";
+
+$CONF['smtp_server'] = getenv('SMTP_HOST');
 $CONF['domain_path'] = 'YES';
 $CONF['domain_in_mailbox'] = 'NO';
-$CONF['fetchmail'] = 'NO';
+$CONF['fetchmail'] = 'YES';
+$CONF['sendmail'] = 'YES';
 $CONF['default_aliases'] = array (
     'abuse' => 'admin',
     'hostmaster' => 'admin',
