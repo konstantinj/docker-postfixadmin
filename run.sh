@@ -47,6 +47,9 @@ init_db() {
 wait_for_mysql
 init_config
 
+mkdir -p /www/templates_c
+chown -R www-data:www-data /www/templates_c
+
 if [ ! -f .initialized ]; then
   init_db
   touch .initialized
