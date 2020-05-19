@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cmd_php="php -S 0.0.0.0:80 -c php.ini -t /www"
-
 wait_for_mysql() {
   until mysql --host=$MYSQL_HOST --user=$MYSQL_USER --password=$MYSQL_PASSWORD --execute="USE $MYSQL_DATABASE;" &>/dev/null; do
     echo "waiting for mysql to start..."
@@ -30,7 +28,7 @@ init_config() {
 }
 
 init_db() {
-  $cmd_php &
+  php -S 127.0.0.1:80 -c php.ini -t /www &
   wait_for_php
   pid_php=$!
   setup_password="s3cr3t";
@@ -55,4 +53,10 @@ if [ ! -f .initialized ]; then
   touch .initialized
 fi
 
-$cmd_php
+
+trap 'kill -9 $(jobs -p)' EXIT
+trap 'exit' INT TERM
+
+su-exec nobody php -S 0.0.0.0:8000 -c /php.ini -t /www &
+
+wait

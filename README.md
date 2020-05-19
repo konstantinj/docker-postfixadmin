@@ -1,8 +1,8 @@
 # PostfixAdmin Docker image
 
-[![](https://badge.imagelayers.io/konjak/postfixadmin:latest.svg)](https://imagelayers.io/?images=konjak/postfixadmin:latest)
-
 Production ready Docker container for [PostfixAdmin](http://postfixadmin.sourceforge.net/) with MySQL usage.
+
+This is a fork from [konstantinj/docker-postfixadmin](https://github.com/konstantinj/docker-postfixadmin) with a tiny security addition.
 
 ## Features - why using this image instead of several others?
 
